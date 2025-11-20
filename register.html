@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Đăng ký</title>
+    <style>
+        :root {
+            --max-w: 520px;
+            --gap: 10px
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            padding: 20px;
+            max-width: var(--max-w);
+            margin: 40px auto;
+            background: #f7f7f8;
+            color: #111
+        }
+
+        .card {
+            background: #fff;
+            border-radius: 8px;
+            padding: 20px;
+            box-shadow: 0 6px 20px rgba(0, 0, 0, .06)
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            gap: var(--gap)
+        }
+
+        label {
+            display: flex;
+            flex-direction: column;
+            font-size: 14px
+        }
+
+        input[type="text"],
+        input[type="email"],
+        input[type="password"],
+        input[type="tel"] {
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 6px;
+            font-size: 14px
+        }
+
+        .row {
+            display: flex;
+            gap: 10px
+        }
+
+        .row>label {
+            flex: 1
+        }
+
+        .actions {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 12px
+        }
+
+        button {
+            padding: 10px 14px;
+            border: 0;
+            border-radius: 6px;
+            background: #0066cc;
+            color: #fff;
+            font-size: 14px;
+            cursor: pointer
+        }
+
+        button:disabled {
+            opacity: .6;
+            cursor: not-allowed
+        }
+
+        #error {
+            color: #b00020;
+            min-height: 1.2em;
+            font-size: 13px
+        }
+
+        .muted {
+            font-size: 13px;
+            color: #666
+        }
+
+        .small {
+            font-size: 13px;
+            color: #666;
+            margin-top: 4px
+        }
+
+        @media (max-width:480px) {
+            body {
+                padding: 12px;
+                margin: 20px auto
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <main class="card" role="main" aria-labelledby="registerTitle">
+        <form id="registerForm" novalidate>
+            <h1 id="registerTitle" style="margin:0 0 8px;font-size:20px">Tạo tài khoản</h1>
+            <p class="muted" style="margin:0 0 12px">Nhập thông tin để tạo tài khoản mới.</p>
+
+            <div class="row">
+                <label>
+                    Họ
+                    <input type="text" name="firstName" required placeholder="Nguyễn" autocomplete="given-name" />
+                </label>
+                <label>
+                    Tên
+                    <input type="text" name="lastName" required placeholder="Văn A" autocomplete="family-name" />
+                </label>
+            </div>
+
+            <label>
+                Email
+                <input type="email" name="email" required autocomplete="email" placeholder="you@example.com" />
+            </label>
+
+            <label>
+                Số điện thoại (tùy chọn)
+                <input type="tel" name="phone" placeholder="0123 456 789" autocomplete="tel" />
+            </label>
+
+            <div class="row">
+                <label>
+                    Mật khẩu
+                    <input type="password" name="password" required minlength="8" autocomplete="new-password"
+                        placeholder="Ít nhất 8 ký tự" />
+                </label>
+                <label>
+                    Xác nhận mật khẩu
+                    <input type="password" name="confirmPassword" required minlength="8" autocomplete="new-password"
+                        placeholder="Nhập lại mật khẩu" />
+                </label>
+            </div>
+
+            <label style="display:flex;align-items:center;gap:8px;font-size:14px">
+                <input type="checkbox" name="newsletter" /> Đăng ký nhận thông tin khuyến mãi
+            </label>
+
+            <div style="display:flex;gap:8px;align-items:center;margin-top:4px">
+                <button type="submit">Đăng ký</button>
+                <div id="error" role="alert" aria-live="polite"></div>
+            </div>
+
+            <p class="small">Bằng việc tiếp tục, bạn đồng ý với <a href="#">Điều khoản dịch vụ</a> và <a href="#">Chính
+                    sách bảo mật</a>.</p>
+            <p class="muted" style="margin:12px 0 0">Đã có tài khoản? <a href="login.html">Đăng nhập</a></p>
+        </form>
+    </main>
+</body>
+
+</html>
