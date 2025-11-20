@@ -1,15 +1,33 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html lang="vi">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Trang chủ - Project E-commerce</title>
+    <style>
+        :root{--max-w:900px;--gap:12px}
+        body{font-family:Arial,Helvetica,sans-serif;background:#f7f7f8;color:#111;margin:0;padding:24px;display:flex;justify-content:center;align-items:center;min-height:100vh}
+        .container{max-width:var(--max-w);width:100%;background:#fff;border-radius:10px;padding:28px;box-shadow:0 8px 30px rgba(0,0,0,.06);text-align:center}
+        h1{margin:0 0 8px;font-size:24px}
+        p{margin:0 0 18px;color:#666}
+        .actions{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
+        .btn{display:inline-block;padding:12px 18px;border-radius:8px;text-decoration:none;color:#fff;background:#0066cc;font-weight:600}
+        .btn.secondary{background:#28a745}
+        footer{margin-top:18px;color:#888;font-size:13px}
+        @media (max-width:480px){.container{padding:18px} .btn{width:100%;text-align:center}}
+    </style>
 </head>
-
 <body>
-    <h1><a href="./login.html">Dang nhap</a></h1>
-    <h1><a href="./register.html">Dang ky</a></h1>
-</body>
+    <main class="container" role="main" aria-labelledby="mainTitle">
+        <h1 id="mainTitle">Chào mừng đến với cửa hàng</h1>
+        <p>Chọn hành động bên dưới để đăng nhập hoặc tạo tài khoản mới.</p>
 
+        <div class="actions" role="navigation" aria-label="Các liên kết nhanh">
+            <a class="btn" href="./login.html">Đăng nhập</a>
+            <a class="btn secondary" href="./register.html">Đăng ký</a>
+        </div>
+
+        <footer>Project E-commerce — giao diện demo</footer>
+    </main>
+</body>
 </html>
