@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Đăng nhập</title>
+    <style>
+        /* style nhỏ cho demo */
+        :root {
+            --max-w: 420px;
+            --gap: 8px
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            padding: 20px;
+            max-width: var(--max-w);
+            margin: 40px auto;
+            background: #f7f7f8;
+            color: #111
+        }
+
+        .card {
+            background: #fff;
+            border-radius: 8px;
+            padding: 20px;
+            box-shadow: 0 6px 20px rgba(0, 0, 0, .06)
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            gap: var(--gap)
+        }
+
+        label {
+            display: flex;
+            flex-direction: column;
+            font-size: 14px
+        }
+
+        input[type="email"],
+        input[type="password"] {
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 6px;
+            font-size: 14px
+        }
+
+        .actions {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 12px
+        }
+
+        button {
+            padding: 10px 14px;
+            border: 0;
+            border-radius: 6px;
+            background: #0066cc;
+            color: #fff;
+            font-size: 14px;
+            cursor: pointer
+        }
+
+        button:disabled {
+            opacity: .6;
+            cursor: not-allowed
+        }
+
+        #error {
+            color: #b00020;
+            min-height: 1.2em;
+            font-size: 13px
+        }
+
+        .muted {
+            font-size: 13px;
+            color: #666
+        }
+
+        @media (max-width:480px) {
+            body {
+                padding: 12px;
+                margin: 20px auto
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <main class="card" role="main" aria-labelledby="loginTitle">
+        <form id="loginForm" novalidate>
+            <h1 id="loginTitle" style="margin:0 0 8px;font-size:20px">Đăng nhập</h1>
+            <p class="muted" style="margin:0 0 12px">Nhập thông tin để truy cập tài khoản của bạn.</p>
+
+            <label>
+                Email
+                <input type="email" name="email" required autocomplete="email" placeholder="you@example.com" />
+            </label>
+
+            <label>
+                Mật khẩu
+                <input type="password" name="password" required autocomplete="current-password"
+                    placeholder="Mật khẩu" />
+            </label>
+
+            <div class="actions">
+                <label style="display:flex;align-items:center;gap:8px;font-size:14px">
+                    <input type="checkbox" name="remember" /> Ghi nhớ đăng nhập
+                </label>
+                <a href="#" class="muted" style="text-decoration:none">Quên mật khẩu?</a>
+            </div>
+
+            <div style="display:flex;gap:8px;align-items:center">
+                <button type="submit">Đăng nhập</button>
+                <div id="error" role="alert" aria-live="polite"></div>
+            </div>
+
+            <p class="muted" style="margin:12px 0 0">Chưa có tài khoản? <a href="#">Đăng ký</a></p>
+        </form>
+    </main>
+
+    <!-- ...existing code... -->
+</body>
+
+</html>
